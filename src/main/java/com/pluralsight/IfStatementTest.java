@@ -13,11 +13,12 @@ public class IfStatementTest {
         System.out.println("What is your pay rate per hour?");
         float payrate = scanner.nextFloat();
         scanner.nextLine();
-        double overtimepaywage = 0;
+        double grosspay = 0;
         if (hoursworked >= 40) {
-           overtimepaywage = (hoursworked - 40) * 1.5 * payrate;
+           grosspay = (hoursworked - 40) * payrate * 1.5 + 40 * payrate;
+        } else {
+            grosspay = payrate * hoursworked;
         }
-        double grosspay = hoursworked * payrate + overtimepaywage;
         System.out.println(name + "'s" + " " + "grosspay is" + " " + "$" + grosspay);
     }
 }
